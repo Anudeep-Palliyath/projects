@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/anude/ontologies/2022/9/apmenunew"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/anude/ontologies/2022/9/apmenunew">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#arabian"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#arabianWrap"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cusine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#indian"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mains"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#menu"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#northIndian"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#northIndianPulav"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#rice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#southIndian"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#southIndianBiriyani"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#wrap"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasArabianWrap"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNorthIndianPulav"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSouthIndianBiriyani"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#allergens"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#dishName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ingredients"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#spicyLevel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AW1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NIP1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SIB1"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#arabian"/>
+        <Class IRI="#cusine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#arabianWrap"/>
+        <Class IRI="#wrap"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cusine"/>
+        <Class IRI="#menu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#indian"/>
+        <Class IRI="#cusine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mains"/>
+        <Class IRI="#menu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#northIndian"/>
+        <Class IRI="#indian"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#northIndianPulav"/>
+        <Class IRI="#rice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#rice"/>
+        <Class IRI="#mains"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#southIndian"/>
+        <Class IRI="#indian"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#southIndianBiriyani"/>
+        <Class IRI="#rice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#wrap"/>
+        <Class IRI="#mains"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#arabianWrap"/>
+        <NamedIndividual IRI="#AW1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#northIndianPulav"/>
+        <NamedIndividual IRI="#NIP1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#southIndianBiriyani"/>
+        <NamedIndividual IRI="#SIB1"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#dishName"/>
+        <NamedIndividual IRI="#AW1"/>
+        <Literal>Chicken Shawarma</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#dishName"/>
+        <NamedIndividual IRI="#NIP1"/>
+        <Literal>Veg Pulav</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#dishName"/>
+        <NamedIndividual IRI="#SIB1"/>
+        <Literal>Thalssery Dum Chicken Biriyani</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasArabianWrap"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasArabianWrap"/>
+        <Class IRI="#arabian"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasNorthIndianPulav"/>
+        <Class IRI="#northIndian"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSouthIndianBiriyani"/>
+        <Class IRI="#southIndian"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasArabianWrap"/>
+        <Class IRI="#arabianWrap"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasNorthIndianPulav"/>
+        <Class IRI="#northIndianPulav"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSouthIndianBiriyani"/>
+        <Class IRI="#southIndianBiriyani"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#allergens"/>
+        <Class IRI="#mains"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#dishName"/>
+        <Class IRI="#mains"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ingredients"/>
+        <Class IRI="#mains"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#spicyLevel"/>
+        <Class IRI="#mains"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#allergens"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#dishName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ingredients"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#spicyLevel"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

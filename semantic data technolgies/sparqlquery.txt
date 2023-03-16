@@ -1,0 +1,130 @@
+PREFIX sc: <http://www.semanticweb.org/anude/ontologies/2022/9/classroom#>
+SELECT ?name  WHERE {
+  ?x sc:Name ?name
+ 
+} 
+
+
+
+====================================================================================
+
+1. To print name of all the south indian Biriyanis
+
+PREFIX sc: <http://www.semanticweb.org/anude/ontologies/2022/9/apmenunew#>
+SELECT ?dishName  WHERE {
+    ?x  a sc:southIndianBiriyani.
+   ?x sc:dishName ?dishName
+ 
+} 
+
+====================================================================================
+
+
+2. To print name and ingredients of all the arabian rice items
+
+PREFIX sc: <http://www.semanticweb.org/anude/ontologies/2022/9/apmenunew#>
+SELECT ?dishName ?ingredients  WHERE {
+    ?x  a sc:arabianRice.
+   ?x sc:dishName ?dishName.
+     ?x sc:ingredients ?ingredients
+
+ 
+} 
+
+====================================================================================
+
+
+3. To print the name of all the North Indian Chicken Pulavs
+
+PREFIX sc: <http://www.semanticweb.org/anude/ontologies/2022/9/apmenunew#>
+SELECT ?dishName  WHERE {
+    ?x  a sc:northIndianPulav.
+   ?x sc:dishName ?dishName
+ 
+} 
+having(STRSTARTS( ?dishName, "Chicken")=true)
+
+====================================================================================
+
+
+4. To print the name of all the North Indian Chicken Pulavs
+
+PREFIX sc: <http://www.semanticweb.org/anude/ontologies/2022/9/apmenunew#>
+SELECT ?dishName  WHERE {
+    ?x  a sc:southIndianBiriyani.
+   ?x sc:dishName ?dishName
+ 
+} 
+having(contains( ?dishName, "Chicken")=true)
+
+====================================================================================
+
+5. To print chicken soups
+
+PREFIX sc: <http://www.semanticweb.org/anude/ontologies/2022/9/apmenunew#>
+SELECT ?dishName  WHERE {
+    
+    ?x  a sc:soups.
+   ?x sc:dishName ?dishName
+ 
+} 
+having(contains( ?dishName, "Chicken")=true)
+
+====================================================================================
+
+
+6. to print all the south Indian Biriyani with spicy level "Hot"
+
+PREFIX sc: <http://www.semanticweb.org/anude/ontologies/2022/9/apmenunew#>
+SELECT ?dishName ?spicyLevel 
+WHERE {
+    
+    ?x  a sc:southIndianBiriyani.
+   	?x sc:dishName ?dishName.
+  	?x sc:spicyLevel ?spicyLevel.
+    FILTER(str(?spicyLevel)="Hot") 
+
+} 
+====================================================================================
+
+7. to print all the south Indian Biriyani with spicy level "Spicy" and dish name contains "Dum"
+
+PREFIX sc: <http://www.semanticweb.org/anude/ontologies/2022/9/apmenunew#>
+SELECT ?dishName ?spicyLevel 
+WHERE {
+    
+    ?x  a sc:southIndianBiriyani.
+   	?x sc:dishName ?dishName.
+  	?x sc:spicyLevel ?spicyLevel.
+    FILTER(contains( ?spicyLevel, "Spicy")=true).
+  	FILTER(contains( ?dishName, "Dum")=true)
+ 
+
+} 
+
+====================================================================================
+
+PREFIX sc: <http://www.semanticweb.org/anude/ontologies/2022/9/apmenunew#>
+PREFIX cusine: <http://www.semanticweb.org/anude/ontologies/2022/9/apmenunew#cusine>
+
+
+SELECT ?dishName
+    WHERE {
+            ?x a sc:arabian.
+  			?x sc:hasArabianWrap ?AW.
+  			?AW sc:dishName ?dishName
+}
+=====================================================================================
+9. To print the 20% discount price of dish "Thalssery Dum Chicken Biriyani" using FILTER and BIND
+PREFIX sc: <http://www.semanticweb.org/anude/ontologies/2022/9/apmenunew#>
+
+
+SELECT ?Dish_Name ?price ?discountPrice
+
+        WHERE {
+                ?x sc:dishName ?Dish_Name.
+  				?x sc:price ?price
+  				 BIND (?price*(1-0.2) AS ?discountPrice)
+  				FILTER(str(?Dish_Name)="Thalssery Dum Chicken Biriyani")
+    
+    }
